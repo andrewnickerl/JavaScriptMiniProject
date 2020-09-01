@@ -5,7 +5,7 @@ const User = require("./models/user");
 const server = express();
 const dbConnStr =
   "mongodb+srv://dbUser:Passw0rd123@cluster0.uxrjs.mongodb.net/Cluster0?retryWrites=true&w=majority";
-
+let PORT = process.env.PORT || 3000;
 mongoose.connect(dbConnStr, { useNewUrlParser: true });
 
 const db = mongoose.connection;
@@ -21,13 +21,21 @@ function saveUser(user) {
   return u.save();
 }
 
-// GET ALL
 server.get("/", (req, res) => {
-    res.send(await User.find());
+  res.send("hello");
 });
 
-// GET USER WITH SPECIFIED USERNAME
-server.get("/", (req, res) => {
-    let username = req.body.username;
-    res.send(await User.find(username))
-})
+// // GET ALL
+// server.get("/", (req, res) => {
+//     res.send(await User.find());
+// });
+
+// // GET USER WITH SPECIFIED USERNAME
+// server.get("/", (req, res) => {
+//     let username = req.body.username;
+//     res.send(await User.find(username))
+// })
+
+server.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
+});
