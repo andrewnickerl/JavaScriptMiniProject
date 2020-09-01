@@ -9,6 +9,9 @@
   "author": "Everett Strunk, Andrew Szymanek, Andrew Nickerl",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.0",
+    "mongoose": "^5.10.2"
   }
 }
