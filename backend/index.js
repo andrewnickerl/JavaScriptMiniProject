@@ -21,20 +21,16 @@ function saveUser(user) {
   return u.save();
 }
 
+// GET ALL
 server.get("/", (req, res) => {
-  res.send("hello");
+    res.send(await User.find());
 });
 
-// // GET ALL
-// server.get("/", (req, res) => {
-//     res.send(await User.find());
-// });
-
-// // GET USER WITH SPECIFIED USERNAME
-// server.get("/", (req, res) => {
-//     let username = req.body.username;
-//     res.send(await User.find(username))
-// })
+// GET USER WITH SPECIFIED USERNAME
+server.get("/:user", (req, res) => {
+    let username = req.params.user;
+    res.send(await User.find(username))
+})
 
 server.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
