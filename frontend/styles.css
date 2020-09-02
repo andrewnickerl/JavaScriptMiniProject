@@ -68,9 +68,14 @@ nav {
 footer {
   background-color: #2c3d5e;
   margin-top: 15px;
+  width: 100%;
 }
 #footer-h6 {
   color: white;
   text-align: center;
   padding: 15px 15px 15px 15px;
+}
+
+#search_body {
+  width: auto;
 }
